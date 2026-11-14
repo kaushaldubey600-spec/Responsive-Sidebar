@@ -1,0 +1,184 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f1f5f9;
+}
+
+/* Sidebar */
+
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    background: #111827;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 25px 20px;
+    transition: 0.3s;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.logo h2 {
+    color: #38bdf8;
+}
+
+.close-btn {
+    display: none;
+    background: none;
+    color: white;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 12px;
+}
+
+.sidebar ul li a {
+    display: block;
+    padding: 14px;
+    color: #cbd5e1;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+    background: #2563eb;
+    color: white;
+}
+
+.sidebar-footer {
+    position: absolute;
+    bottom: 25px;
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+/* Main Content */
+
+.main-content {
+    margin-left: 260px;
+    min-height: 100vh;
+}
+
+header {
+    background: white;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 2px 8px #00000010;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 25px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.content {
+    padding: 40px;
+}
+
+.content h1 {
+    color: #1e293b;
+    margin-bottom: 12px;
+}
+
+.content p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    margin-top: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px #0000000d;
+}
+
+.card h2 {
+    margin-bottom: 12px;
+    color: #1e293b;
+}
+
+.start-btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    margin-top: 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.start-btn:hover {
+    background: #1d4ed8;
+}
+
+/* Overlay */
+
+.overlay {
+    display: none;
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 768px) {
+
+    .sidebar {
+        left: -260px;
+    }
+
+    .sidebar.open {
+        left: 0;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .close-btn {
+        display: block;
+    }
+
+    .overlay.show {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: #00000070;
+        z-index: 90;
+    }
+
+    .content {
+        padding: 25px 18px;
+    }
+}
